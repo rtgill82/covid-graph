@@ -16,7 +16,7 @@ setup(
     long_description=Path("README.md").read_text(),
     long_description_content_type="text/markdown",
     license="BSD-2-Clause",
-    url="https://github.com/xelkarin/covid-graph",
+    url="https://github.com/rtgill82/covid-graph",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: BSD License",
