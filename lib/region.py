@@ -49,6 +49,10 @@ class Region:
         for date, stats in sorted(self._stats.items()):
             date = date.strftime("%m/%d/%Y")
             cases = stats["confirmed"] - prev
+
+            if cases < 0 or cases > 1000000:
+                continue
+
             prev = stats["confirmed"]
 
             if len(running_cases) == 7:
@@ -56,8 +60,6 @@ class Region:
             running_cases.append(cases)
 
             avg = self._calculate_7day_avg(running_cases)
-            if cases < 0:
-                cases = 0
             yield DailyStats(date, cases, avg)
 
     def update_stats(self, date: datetime, stats: Dict):
