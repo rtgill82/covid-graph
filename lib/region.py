@@ -50,7 +50,7 @@ class Region:
             date = date.strftime("%m/%d/%Y")
             cases = stats["confirmed"] - prev
 
-            if cases < 0 or cases > 1000000:
+            if cases < 0 or cases > 9000000:
                 continue
 
             prev = stats["confirmed"]
